@@ -18,13 +18,16 @@ const colorOptionsContainer = document.querySelector(".color-options");
 const gameStatus = document.querySelector('[data-testid="gameStatus"]');
 const scoreElement = document.querySelector('[data-testid="score"]');
 const newGameButton = document.querySelector('[data-testid="newGameButton"]');
+const toggleButton = document.getElementById("toggleButton");
+
+toggleButton.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+});
 
 let targetColor;
 let score = 0;
 
 function initGame() {
-  score = 0;
-  scoreElement.textContent = score;
   gameStatus.textContent = "";
 
   targetColor = colors[Math.floor(Math.random() * colors.length)];
@@ -72,6 +75,44 @@ function shuffleArray(array) {
   return array;
 }
 
-newGameButton.addEventListener("click", initGame);
+newGameButton.addEventListener("click", () => {
+  score = 0;
+  scoreElement.textContent = score;
+  initGame();
+});
 
 initGame();
+
+// CSS Styles
+document.head.insertAdjacentHTML(
+  "beforeend",
+  `
+  <style>
+    .toggle-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 10px;
+      font-size: 14px;
+      background: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .toggle-button:hover {
+      background: #333;
+    }
+    .dark-mode {
+      background: #333;
+      color: white;
+    }
+    @media (max-width: 480px) {
+      .toggle-button {
+        font-size: 12px;
+        padding: 8px;
+      }
+    }
+  </style>
+  `
+);
