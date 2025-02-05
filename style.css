@@ -40,14 +40,14 @@ body {
     font-weight: 500;
   }
   
-  .color-options {
+  .colorOption {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
     margin-bottom: 20px;
   }
   
-  .color-options button {
+  .colorOption button {
     width: 100%;
     height: 55px;
     border: none;
@@ -56,7 +56,7 @@ body {
     transition: transform 0.2s ease, opacity 0.2s ease;
   }
   
-  .color-options button:hover {
+  .colorOption button:hover {
     transform: scale(1.08);
   }
   
@@ -90,7 +90,7 @@ body {
   }
   
   @media (max-width: 480px) {
-    .color-options {
+    .colorOption {
       grid-template-columns: repeat(2, 1fr);
     }
   }

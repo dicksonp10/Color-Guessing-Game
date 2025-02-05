@@ -14,7 +14,7 @@ const colors = [
 ];
 
 const colorBox = document.querySelector('[data-testid="colorBox"]');
-const colorOptionsContainer = document.querySelector(".color-options");
+const colorOptionsContainer = document.querySelector(".colorOption");
 const gameStatus = document.querySelector('[data-testid="gameStatus"]');
 const scoreElement = document.querySelector('[data-testid="score"]');
 const newGameButton = document.querySelector('[data-testid="newGameButton"]');
